@@ -5,8 +5,8 @@ public class Main {
         functions.whatToDo(); // Ask user what to do
         functions.keys(); // Get the keys from the user
         switch (variables.whatToDo) { // Check what to do
-            case 1: // Encrypt
-                System.out.print("Enter text to encrypt: ");
+            case 1: { // Encrypt
+                if (settings.showHud) System.out.print("Enter text to encrypt: ");
                 Scanner textToEncrypt = new Scanner(System.in);
                 variables.operator = textToEncrypt.nextLine();
                 encrypt.cesar(variables.key1);
@@ -20,10 +20,12 @@ public class Main {
                 encrypt.cesar(variables.key5);
                 encrypt.base64();
                 encrypt.cesar(variables.key6);
-                System.out.println("Encrypted text: " + variables.operator);
+                if (settings.showHud) System.out.print("Encrypted text: ");
+                System.out.println(variables.operator);
                 break;
-            case 2: // Decrypt
-                System.out.print("Enter text to decrypt: ");
+            }
+            case 2: { // Decrypt
+                if (settings.showHud) System.out.print("Enter text to decrypt: ");
                 Scanner textToDecrypt = new Scanner(System.in);
                 variables.operator = textToDecrypt.nextLine();
                 decrypt.cesar(variables.key6);
@@ -37,8 +39,14 @@ public class Main {
                 decrypt.cesar(variables.key2);
                 decrypt.base64();
                 decrypt.cesar(variables.key1);
-                System.out.println("Decrypted text: " + variables.operator);
+                if (settings.showHud) System.out.print("Decrypted text: ");
+                System.out.println(variables.operator);
                 break;
+            }
+            default: {
+                if (settings.showHud) System.out.println("Invalid option");
+                break;
+            }
         }
     }
 }
