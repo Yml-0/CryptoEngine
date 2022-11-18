@@ -1,3 +1,4 @@
+// All functions are here
 import java.util.Scanner;
 
 public class functions {
@@ -58,6 +59,48 @@ public class functions {
             variables.key4 = 7;
             variables.key5 = 2;
             variables.key6 = 4;
+        }
+    }
+
+    public static void title() { // This function is used to print the title
+        clearTerminal();
+        if (settings.showTitle) {
+            if (settings.showBigTitle) {
+                System.out.println(" █████╗ ██████╗ ██╗   ██╗██████╗ ████████╗ █████╗ ███████╗███╗  ██╗ ██████╗ ██╗███╗  ██╗███████╗");
+                System.out.println("██╔══██╗██╔══██╗╚██╗ ██╔╝██╔══██╗╚══██╔══╝██╔══██╗██╔════╝████╗ ██║██╔════╝ ██║████╗ ██║██╔════╝");
+                System.out.println("██║  ╚═╝██████╔╝ ╚████╔╝ ██████╔╝   ██║   ██║  ██║█████╗  ██╔██╗██║██║  ██╗ ██║██╔██╗██║█████╗");
+                System.out.println("██║  ██╗██╔══██╗  ╚██╔╝  ██╔═══╝    ██║   ██║  ██║██╔══╝  ██║╚████║██║  ╚██╗██║██║╚████║██╔══╝ ");
+                System.out.println("╚█████╔╝██║  ██║   ██║   ██║        ██║   ╚█████╔╝███████╗██║ ╚███║╚██████╔╝██║██║ ╚███║███████╗");
+                System.out.println(" ╚════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝        ╚═╝    ╚════╝ ╚══════╝╚═╝  ╚══╝ ╚═════╝ ╚═╝╚═╝  ╚══╝╚══════╝\n");
+            } else {
+                System.out.println("CryptoEngine");
+                System.out.println("Version 1.0.0");
+                System.out.println("By Yml0\n");
+            }
+        }
+    }
+
+    public static void clearTerminal() { // This function is used to clear the terminal
+        if (settings.clearTerminal) {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
+    }
+
+    public static void info() {
+        if (settings.showHud) {
+            String operation = null;
+            if (variables.whatToDo == 1) operation = "Encrypt";
+            else if (variables.whatToDo == 2) operation = "Decrypt";
+            System.out.println("Inputted text: " + variables.originalOperator);
+            System.out.println("Operation: " + operation);
+            System.out.println("Key 1: " + variables.key1);
+            System.out.println("Key 2: " + variables.key2);
+            System.out.println("Key 3: " + variables.key3);
+            System.out.println("Key 4: " + variables.key4);
+            System.out.println("Key 5: " + variables.key5);
+            System.out.println("Key 6: " + variables.key6);
+            System.out.println();
         }
     }
 }
