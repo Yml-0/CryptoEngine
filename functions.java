@@ -88,7 +88,7 @@ public class functions {
     }
 
     public static void info() {
-        if (settings.showHud) {
+        if (settings.showInfo) {
             String operation = null;
             if (variables.whatToDo == 1) operation = "Encrypt";
             else if (variables.whatToDo == 2) operation = "Decrypt";
